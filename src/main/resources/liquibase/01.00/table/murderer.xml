@@ -1,0 +1,24 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
+
+    <changeSet id="2022-11-01_lba_01" author="lbazantova">
+        <comment>create new table for murderers</comment>
+        <createTable tableName="murderer" remarks="tabulka pro vrahy">
+            <column name="id" type="${types.common.pk}" remarks="primární klíč">
+                <constraints primaryKey="true" unique="true"/>
+            </column>
+            <column name="birthdate" type="${types.common.string}" remarks="datum narozeni">
+                <constraints nullable="true"/>String
+            </column>
+            <column name="name" type="${types.common.string}" remarks="jmeno">
+                <constraints nullable="true"/>
+            </column>
+            <column name="surname" type="${types.common.string}" remarks="prijmeni">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

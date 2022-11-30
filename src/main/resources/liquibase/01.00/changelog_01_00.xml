@@ -1,0 +1,26 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
+
+    <changeSet id="2022-11-01_lba_00" author="lbazantova">
+        <tagDatabase tag="before_01.00"/>
+    </changeSet>
+
+    <include file="table/murderer.xml" relativeToChangelogFile="true"/>
+    <include file="table/crime.xml" relativeToChangelogFile="true"/>
+
+    <changeSet id="2022-11-24_lba_01" author="lbazantova">
+        <sql>
+            INSERT INTO murderer(id, birthdate, name, surname)
+            VALUES (1, '17.03.1942', 'John Wayne', 'Gacy');
+        </sql>
+    </changeSet>
+    <changeSet id="2022-11-24_lba_02" author="lbazantova">
+        <sql>
+            INSERT INTO crime(murderer_id, country, victims, details)
+            VALUES (1, 'Illinois', 33,
+                    'John Wayne Gacy (March 17, 1942 – May 10, 1994) was an American serial killer and sex offender who raped, tortured, and murdered at least 33 young men and boys. Gacy regularly performed at children''s hospitals and charitable events as "Pogo the Clown" or "Patches the Clown", personas he had devised. He became known as the Killer Clown due to his public services as a clown prior to the discovery of his crimes.')
+        </sql>
+    </changeSet>
+</databaseChangeLog>

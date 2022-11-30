@@ -1,0 +1,4 @@
+
+### get murderer by surname
+GET http://localhost:8080/main/murderer/Gacy
+Accept: application/json

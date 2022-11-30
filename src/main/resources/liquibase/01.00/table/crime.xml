@@ -1,0 +1,30 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
+
+    <changeSet id="2022-11-14_lba_01" author="lbazantova">
+        <comment>create new table for crimes</comment>
+        <createTable tableName="crime" remarks="tabulka pro zlociny">
+            <column name="id" type="${types.common.pk}" remarks="primární klíč">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="murderer_id" type="${types.common.fk}">
+                <constraints foreignKeyName="murderer_crime_fk"
+                             referencedTableName="murderer"
+                             referencedColumnNames="id"
+                             nullable="false"/>
+            </column>
+            <column name="country" type="${types.common.string}" remarks="zeme zlocinu">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="victims" type="bigint" remarks="celkovy pocet obeti">
+                <constraints nullable="true"/>
+            </column>
+            <column name="details" type="${types.common.longString}" remarks="detaily a popis zlocinu">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,3 @@
+### get crime by anniversary/birthday
+GET http://localhost:8080/main/todaysAnniversary
+Accept: application/json
