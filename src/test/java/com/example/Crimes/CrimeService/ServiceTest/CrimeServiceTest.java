@@ -6,17 +6,18 @@ import com.example.Crimes.CrimeService.CrimeService;
 import com.example.Crimes.Entity.Crime;
 import com.example.Crimes.Entity.Murderer;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.mockito.Mockito.doReturn;
+import java.time.LocalDate;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
 
 
-@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(MockitoExtension.class)
 class CrimeServiceTest {
 
     @InjectMocks
@@ -29,7 +30,7 @@ class CrimeServiceTest {
     private MurdererRepository murdererRepository;
 
 
-    @Test //NOT WORKING YET
+    @Test
     public void getTodaysAnniversaryCrimeTest_crimePresent() {
 
         var birthdate = "1942-03-17";
@@ -44,16 +45,23 @@ class CrimeServiceTest {
         crime.setMurdererId(1L);
         crime.setDetails("details");
 
-        doReturn(murderer).when(murdererRepository.getMurdererByBirthdate(birthdate));
-        doReturn(crime).when(crimeRepository.getCrimeByMurdererId(1L));
+        when(murdererRepository.getMurdererByBirthdate(birthdate)).thenReturn(murderer);
+        when(crimeRepository.getCrimeByMurdererId(1L)).thenReturn(crime);
 
-        var result = crimeService.getTodaysAnniversaryCrime();
+        var result = crimeService.getTodaysAnniversaryCrime(LocalDate.of(1942, 3, 17));
 
         assertNotNull(result);
         assertEquals(33, result.getVictims());
         assertEquals("Illinois", result.getCountry());
         assertEquals(1, (long) result.getMurdererId());
         assertEquals("details", result.getDetails());
+
+    }
+
+    @Test
+    public void getTodaysAnniversaryCrimeTest_crimeNotPresent() {
+
+        assertThrows(NullPointerException.class, () -> crimeService.getTodaysAnniversaryCrime(LocalDate.of(2011, 2, 2)));
 
     }
 }

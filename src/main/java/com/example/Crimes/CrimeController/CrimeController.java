@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
+
 @RestController
 @RequestMapping("/main")
 @RequiredArgsConstructor
@@ -17,6 +19,6 @@ public class CrimeController {
 
     @GetMapping("/todaysAnniversary")
     public ResponseEntity<CrimeDto> getMurderer() {
-        return ResponseEntity.ok(crimeService.getTodaysAnniversaryCrime());
+        return ResponseEntity.ok(crimeService.getTodaysAnniversaryCrime(LocalDate.now()));
     }
 }

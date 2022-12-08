@@ -23,15 +23,15 @@ public class CrimeService {
 
     /**
      * Method returns CrimeDto
-     * variable  dateMock is used because of the lack of data in DB
+     * variable  localDate needs overwrite because of the lack of data in DB
      * correct value will be LocalDate.now()
      */
-    public CrimeDto getTodaysAnniversaryCrime() {
+    public CrimeDto getTodaysAnniversaryCrime(LocalDate localDate) {
 
-        var dateMock = LocalDate.of(1942, 3, 17);
+        localDate = LocalDate.of(1942, 3, 17);
 
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        String formattedDate = dateMock.format(dateTimeFormatter);
+        String formattedDate = localDate.format(dateTimeFormatter);
 
         try {
             var murderer = murdererRepository.getMurdererByBirthdate(formattedDate);
