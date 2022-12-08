@@ -9,7 +9,7 @@
             <column name="id" type="${types.common.pk}" remarks="primární klíč">
                 <constraints primaryKey="true" unique="true"/>
             </column>
-            <column name="birthdate" type="${types.common.string}" remarks="datum narozeni">
+            <column name="birthdate" type="${types.common.timestamp}" remarks="datum narozeni">
                 <constraints nullable="true"/>String
             </column>
             <column name="name" type="${types.common.string}" remarks="jmeno">

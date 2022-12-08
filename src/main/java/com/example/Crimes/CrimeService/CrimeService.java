@@ -6,6 +6,10 @@ import com.example.Crimes.Dtos.CrimeDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class CrimeService {
@@ -13,7 +17,7 @@ public class CrimeService {
     private final CrimeRepository crimeRepository;
     private final MurdererRepository murdererRepository;
 
-    public CrimeDto getTodaysAnniversaryCrime(){
+    public CrimeDto getTodaysAnniversaryCrime() {
 
         // z DB se podle aktualniho datumu vybere zlocinec, ktery ma dnes narozeniny
         // - k tomu je lepsi predelat ukladani narozenin v DB na format TIMESTAMP, ted je to ve Stringu a je to naprd

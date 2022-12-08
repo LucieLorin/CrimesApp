@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 @AllArgsConstructor
 public class ErrorController implements org.springframework.boot.web.servlet.error.ErrorController {
 
-    private ErrorService errorService;
+    private final ErrorService errorService;
 
     /**
      * @deprecated

@@ -13,7 +13,7 @@
     <changeSet id="2022-11-24_lba_01" author="lbazantova">
         <sql>
             INSERT INTO murderer(id, birthdate, name, surname)
-            VALUES (1, '17.03.1942', 'John Wayne', 'Gacy');
+            VALUES (1, '1942-03-17', 'John Wayne', 'Gacy');
         </sql>
     </changeSet>
     <changeSet id="2022-11-24_lba_02" author="lbazantova">

@@ -10,6 +10,7 @@ import org.springframework.beans.BeanUtils;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.Table;
+import java.sql.Timestamp;
 
 @Entity
 @Getter
@@ -20,7 +21,7 @@ import javax.persistence.Table;
 public class Murderer extends BaseEntity {
 
     @JoinColumn(name = "birthdate")
-    private String birthdate;
+    private Timestamp birthdate;
 
     @JoinColumn(name = "name")
     private String name;
