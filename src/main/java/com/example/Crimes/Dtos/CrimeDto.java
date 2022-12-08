@@ -7,7 +7,7 @@ public class CrimeDto {
 
     private Long murdererId;
     private String country;
-    private int numberOfVictims;
+    private int victims;
     private String details;
 
 }

@@ -28,11 +28,8 @@ public class Crime extends BaseEntity {
     @JoinColumn(name = "country")
     private String country;
 
-    @JoinColumn(name = "date")
-    private String date;
-
     @JoinColumn(name = "victims")
-    private int numberOfVictims;
+    private int victims;
 
     @JoinColumn(name = "details")
     private String details;

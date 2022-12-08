@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 
 @Entity
 @Getter
@@ -21,7 +22,7 @@ import java.sql.Timestamp;
 public class Murderer extends BaseEntity {
 
     @JoinColumn(name = "birthdate")
-    private Timestamp birthdate;
+    private String birthdate;
 
     @JoinColumn(name = "name")
     private String name;
