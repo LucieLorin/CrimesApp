@@ -1,7 +1,6 @@
 package com.example.Crimes.Entity;
 
 import com.example.Crimes.Dtos.CrimeDto;
-import com.example.Crimes.Dtos.MurdererDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

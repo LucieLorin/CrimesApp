@@ -3,16 +3,11 @@ package com.example.Crimes.CrimeService;
 import com.example.Crimes.CrimeRepository.CrimeRepository;
 import com.example.Crimes.CrimeRepository.MurdererRepository;
 import com.example.Crimes.Dtos.CrimeDto;
-import com.example.Crimes.Entity.Crime;
-import com.example.Crimes.Entity.Murderer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
