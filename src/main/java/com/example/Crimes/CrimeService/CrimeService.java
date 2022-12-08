@@ -23,7 +23,7 @@ public class CrimeService {
 
     /**
      * Method returns CrimeDto
-     * variable  dateMock is used because of lack of data in DB
+     * variable  dateMock is used because of the lack of data in DB
      * correct value will be LocalDate.now()
      */
     public CrimeDto getTodaysAnniversaryCrime() {
