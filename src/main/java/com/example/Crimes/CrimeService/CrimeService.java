@@ -33,9 +33,13 @@ public class CrimeService {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String formattedDate = dateMock.format(dateTimeFormatter);
 
-        var murderer = murdererRepository.getMurdererByBirthdate(formattedDate);
-        var actualCrime = crimeRepository.getCrimeByMurdererId(murderer.getId());
+        try {
+            var murderer = murdererRepository.getMurdererByBirthdate(formattedDate);
+            var actualCrime = crimeRepository.getCrimeByMurdererId(murderer.getId());
+            return actualCrime.toCrimeDto();
 
-        return actualCrime.toCrimeDto();
+        } catch (NullPointerException e) {
+            throw new NullPointerException("The database does not contain any crimes for input date.");
+        }
     }
 }
