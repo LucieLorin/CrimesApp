@@ -1,6 +1,7 @@
 package com.example.Crimes.CrimeController;
 
 import com.example.Crimes.CrimeRepository.MurdererRepository;
+import com.example.Crimes.CrimeService.MurdererService;
 import com.example.Crimes.Dtos.MurdererDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -14,14 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class MurdererController {
 
-    private final MurdererRepository murdererRepository;
+  private final MurdererService murdererService;
 
     @GetMapping("/murderer/{surname}")
     public ResponseEntity<MurdererDto> getMurderer(
             @PathVariable("surname")
                     String surname) {
-        var murderer = murdererRepository.getMurdererBySurname(surname);
-        return ResponseEntity.ok(murderer.toMurdererDto());
+        var murderer = murdererService.getMurdererBySurname(surname);
+        return ResponseEntity.ok(murderer);
     }
 
 }
