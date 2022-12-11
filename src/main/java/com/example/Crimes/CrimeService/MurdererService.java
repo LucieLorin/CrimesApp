@@ -26,9 +26,11 @@ public class MurdererService {
         }
 
         var surnameTrim = surname.trim();
+
+        // capitalize funkce se jebe, nevim proc, tohle je jen reminder, vyresit az se vratim z brna
         var capitalizedSurname = StringUtils.capitalize(surnameTrim.toLowerCase());
 
-        return (murdererRepository.getMurdererBySurname(capitalizedSurname)).toMurdererDto();
+        return (murdererRepository.getMurdererBySurname(surnameTrim)).toMurdererDto();
 
     }
 

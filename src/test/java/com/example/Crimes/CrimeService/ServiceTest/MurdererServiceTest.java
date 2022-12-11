@@ -27,6 +27,7 @@ class MurdererServiceTest {
     @Mock
     private MurdererRepository murdererRepository;
 
+//    @Test(valueUsed, result)
 
     @ParameterizedTest
     @ValueSource(strings = {"gacy", "GACY", "Gacy", "GAcy", "54965665", " "})
@@ -42,15 +43,15 @@ class MurdererServiceTest {
 
     }
 
-    @ParameterizedTest
-    @NullSource
-    public void getMurdererBySurname_nullSource(String surname) {
-
-        var result = murdererService.getMurdererBySurname(surname);
-
-        assertNotNull(result);
-
-
-    }
+//    @ParameterizedTest
+//    @NullSource
+//    public void getMurdererBySurname_nullSource(String surname) {
+//
+//        var result = murdererService.getMurdererBySurname(surname);
+//
+//        assertNotNull(result);
+//
+//
+//    }
 
 }
