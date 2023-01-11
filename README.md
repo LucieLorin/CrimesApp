@@ -6,7 +6,9 @@
 * Liquibase
 * PostgreSQL
 * JUNIT
-* FE tech-stack zatím nevybrán
+* Javascript
+* Angular
+* Html & Css
 
 BUDOUCÍ PODOBA: 
 
