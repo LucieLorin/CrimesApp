@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class MurdererController {
 
-    private final MurdererRepository murdererRepository;
+    private MurdererRepository murdererRepository;
 
     @GetMapping("/murderer/{surname}")
     public ResponseEntity<MurdererDto> getMurderer(

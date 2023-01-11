@@ -1,9 +1,11 @@
 package com.example.Crimes.CrimeRepository;
 
-import com.example.Crimes.Entity.Crime;
-import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.Crimes.Entity.Crime;
 
 public interface CrimeRepository extends JpaRepository <Crime, Long> {
 

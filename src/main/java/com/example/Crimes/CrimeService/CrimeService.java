@@ -37,4 +37,5 @@ public class CrimeService {
             throw new NullPointerException("The database does not contain any crimes for input date.");
         }
     }
+    
 }
